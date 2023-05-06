@@ -1,0 +1,42 @@
+<div class="about-event">
+  <div class="event-poster">
+    <h1>{{event.name}}</h1>
+    <img src="/assets/posters/{{event.poster}}" alt="event poster" width="300" >
+  </div>
+
+  <div class="event-detail">
+
+      <div class="short-info">
+        <div class="desc">
+          <span> <strong> Description: </strong> {{event.description}}</span>
+        </div>
+        <br>
+        <div class="age">
+          <span> <strong> Age rating: </strong> {{event.age_rating}}</span>
+        </div>
+        <br>
+        <div class="genre">
+          <span> <strong> Genre: </strong> {{event.genre}}</span>
+        </div>
+        <br>
+        <div class="date">
+          <span> <strong> Premiere Date: </strong> {{event.premiere_date}}</span>
+        </div>
+
+      </div>
+      <br>
+      <div class="duration">
+        <span> <strong> Duration: </strong> {{event.duration}}</span>
+      </div>
+    </div>
+    <div class="ticket">
+      <button (click)="showTickets=true"> Buy ticket</button>
+    </div>
+  <ng-container  class="ticket" *ngIf="showTickets">
+    <div class="ticket-container">
+      <button class="btn-close" (click)="showTickets=false">X</button>
+    <app-ticket [eventId]="event.id"></app-ticket>
+      </div>
+  </ng-container>
+  </div>
+

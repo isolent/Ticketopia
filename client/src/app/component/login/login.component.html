@@ -1,0 +1,17 @@
+<div class="login-page">
+    <div class="form">
+        <div class="login">
+        <h1>Login</h1>
+    </div>
+      <div class="login-form">
+        <input type="text" [(ngModel)]="email" placeholder="Email"/>
+        <input type="password" [(ngModel)]="password" placeholder="Password"/>
+        <button (click)="login()">login</button>
+        <p class="message"> <a href="#">Forgot password?</a></p>
+        <p class="message2"> Don not have an account? <a href="/signup">Create account</a></p>
+        <div class="message" *ngIf="errorMessage">
+          <p class="error">{{errorMessage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
